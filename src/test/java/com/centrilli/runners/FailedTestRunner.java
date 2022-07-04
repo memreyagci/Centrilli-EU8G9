@@ -1,4 +1,4 @@
-package com.cydeo.runners;
+package com.centrilli.runners;
 
 
 import io.cucumber.junit.Cucumber;
@@ -7,7 +7,7 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        glue = "com/cydeo/step_definitions",
+        glue = "com/centrilli/step_defs",
         features = "@target/rerun.txt"
 )
 
