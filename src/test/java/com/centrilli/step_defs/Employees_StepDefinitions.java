@@ -31,13 +31,13 @@ public class Employees_StepDefinitions {
     }
     @Given("user is on Employees page")
     public void user_is_on_employees_page() {
-        employeesPage.buttonNavigationEmployees.click();
+        employeesPage.btnNavigationEmployees.click();
     }
 
 
     @When("user clicks Create button")
     public void user_clicks_create_button() {
-        employeesPage.buttonCreate.click();
+        employeesPage.btnCreate.click();
     }
     @Then("employee creation page shows up")
     public void employee_creation_page_shows_up() {
@@ -47,7 +47,7 @@ public class Employees_StepDefinitions {
 
     @When("user clicks Kanban button")
     public void user_clicks_kanban_button() {
-        employeesPage.buttonSwitchKanbanView.click();
+        employeesPage.btnSwitchKanbanView.click();
     }
     @Then("employees are listed as grid")
     public void employees_are_listed_as_grid() {
@@ -57,7 +57,7 @@ public class Employees_StepDefinitions {
 
     @When("user clicks List button")
     public void user_clicks_list_button() {
-        employeesPage.buttonSwitchListView.click();
+        employeesPage.btnSwitchListView.click();
     }
     @Then("employees are listed as a list")
     public void employees_are_listed_as_a_list() {
@@ -71,7 +71,7 @@ public class Employees_StepDefinitions {
     }
     @And("user clicks Save button")
     public void clicks_save_button() {
-        employeesPage.buttonSave.click();
+        employeesPage.btnSave.click();
     }
     @Then("'Employee created' message appears under full profile")
     public void employee_created_message_appears_under_full_profile() {
@@ -86,7 +86,7 @@ public class Employees_StepDefinitions {
     }
     @And("user clicks the Employees module")
     public void user_clicks_the_employees_module() {
-        employeesPage.buttonNavigationEmployees.click();
+        employeesPage.btnNavigationEmployees.click();
     }
     @And("user searches the name on the search box")
     public void user_types_in_to_search_box() {

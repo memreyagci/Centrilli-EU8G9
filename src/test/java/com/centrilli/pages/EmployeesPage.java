@@ -19,16 +19,16 @@ public class EmployeesPage {
 
 
     @FindBy(css = "[data-menu = '157']")
-    public WebElement buttonNavigationEmployees;
+    public WebElement btnNavigationEmployees;
 
     @FindBy(xpath = "//button[normalize-space(text()) = 'Create']")
-    public WebElement buttonCreate;
+    public WebElement btnCreate;
 
     @FindBy(css = "[data-view-type = 'kanban']")
-    public WebElement buttonSwitchKanbanView;
+    public WebElement btnSwitchKanbanView;
 
     @FindBy(css = "[data-view-type = 'list']")
-    public WebElement buttonSwitchListView;
+    public WebElement btnSwitchListView;
 
     @FindBy(xpath = "//li[text()='New']")
     public WebElement textNewEmployee;
@@ -43,7 +43,7 @@ public class EmployeesPage {
     public WebElement inputName;
 
     @FindBy(xpath = "//button[@accesskey='s']")
-    public WebElement buttonSave;
+    public WebElement btnSave;
 
     @FindBy(xpath = "//p[text()='Employee created']")
     public WebElement textEmployeeCreated;
