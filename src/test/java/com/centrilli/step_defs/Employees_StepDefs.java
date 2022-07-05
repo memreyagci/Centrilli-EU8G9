@@ -14,7 +14,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 
-public class Employees_StepDefinitions {
+public class Employees_StepDefs {
     LoginPage loginPage = new LoginPage();
     EmployeesPage employeesPage = new EmployeesPage();
     WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 10);
