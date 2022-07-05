@@ -25,9 +25,6 @@ public class Employees_StepDefs {
     @Given("user is logged in as PosManager")
     public void user_is_logged_in_as_pos_manager() {
         loginPage.login();
-
-        // Needed to wait for Inbox page to load, otherwise it directs to it later on, thus doesn't end up on desired page
-        wait.until(ExpectedConditions.titleContains("#Inbox"));
     }
     @Given("user is on Employees page")
     public void user_is_on_employees_page() {
