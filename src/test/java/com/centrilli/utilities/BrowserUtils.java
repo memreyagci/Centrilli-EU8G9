@@ -18,6 +18,19 @@ public class BrowserUtils {
 This method will accept int (in seconds) and execute Thread.sleep
 for given duration
  */
+    public static boolean isClickable(WebElement element)
+    {
+        try
+        {
+            WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 5);
+            wait.until(ExpectedConditions.elementToBeClickable(element));
+            return true;
+        }
+        catch (Exception e)
+        {
+            return false;
+        }
+    }
     public static void sleep(int second){
         second *=1000;
         try {
