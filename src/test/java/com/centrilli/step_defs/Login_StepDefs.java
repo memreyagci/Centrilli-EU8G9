@@ -14,7 +14,7 @@ public class Login_StepDefs {
         Driver.getDriver().get(ConfigurationReader.getProperty("project.url"));
         loginPage.inputEmailAddress.sendKeys(ConfigurationReader.getProperty("posmanager.email"));
         loginPage.inputPassword.sendKeys(ConfigurationReader.getProperty("posmanager.password"));
-        loginPage.buttonLogin.click();
+        loginPage.btnLogIn.click();
 
     }
 }
