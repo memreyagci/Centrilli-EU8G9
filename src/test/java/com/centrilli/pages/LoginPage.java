@@ -43,4 +43,16 @@ public class LoginPage {
     @FindBy(css = ".btn-link")
     public WebElement btnResetPassword;
 
+    @FindBy(id = "login")
+    public WebElement userName;
+
+    @FindBy(id = "password")
+    public WebElement password;
+
+    @FindBy(xpath = "//button[@class=\"btn btn-primary\"]")
+    public WebElement loginButton;
+
+    @FindBy(xpath = "//div[@class=\"o_control_panel\"]//li[@class=\"active\"]")
+    public WebElement hashInbox;
+
 }
