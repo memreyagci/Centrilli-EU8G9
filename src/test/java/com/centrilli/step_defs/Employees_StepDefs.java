@@ -22,11 +22,6 @@ public class Employees_StepDefs {
     private final String employeeName = new Faker().name().name();
 
 
-    @Given("user is logged in as PosManager")
-    public void user_is_logged_in_as_pos_manager() {
-        loginPage.login();
-    }
-
     @Given("user is on Employees page")
     public void user_is_on_employees_page() {
         employeesPage.btnNavigationEmployees.click();
