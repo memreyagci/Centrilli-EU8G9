@@ -20,11 +20,7 @@ public class CreateNewVehicle_StepDefinitions {
     LoginPage loginPage = new LoginPage();
     WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 10);
 
-    @Given("user is already logged in")
-    public void user_is_already_logged_in() {
-      loginPage.login();
 
-    }
     @Given("user clicks fleet module")
     public void user_clicks_fleet_module() {
     VehiclePages.moreOptionDropdown.click();
