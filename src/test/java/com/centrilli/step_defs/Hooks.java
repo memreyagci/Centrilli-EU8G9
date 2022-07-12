@@ -5,13 +5,16 @@ In the class we will be able to pass pre- & post- conditions to
  each scenario and each step
  */
 
+import com.centrilli.pages.LoginPage;
 import com.centrilli.utilities.Driver;
 import io.cucumber.java.After;
 import io.cucumber.java.Scenario;
+import io.cucumber.java.en.Given;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 
 public class Hooks {
+    LoginPage loginPage = new LoginPage();
 
     //import from io.cucumber.java not from junit
     //@Before (order = 1)
@@ -61,5 +64,9 @@ public class Hooks {
         System.out.println("--------> applying tearDown using @AfterStep");
     }
 
+    @Given("user is logged in as PosManager")
+    public void user_is_logged_in_as_pos_manager() {
+        loginPage.login();
+    }
 
 }
