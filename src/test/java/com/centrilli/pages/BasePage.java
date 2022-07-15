@@ -22,6 +22,7 @@ public class BasePage {
             this.dropdownMenuMore.click();
             navBarBtn.click();
         }
+
     }
 
 
