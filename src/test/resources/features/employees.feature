@@ -8,7 +8,7 @@ Feature: Employee Menu
 
   @CNTR-334
   Scenario: Verify that Create button works as expected
-    When user clicks Create button
+    When user clicks Create bbutton
     Then employee creation page shows up
 
 
