@@ -43,5 +43,4 @@ public class LoginPage {
     @FindBy(css = ".btn-link")
     public WebElement resetPassword;
 
-
 }
