@@ -15,7 +15,7 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features",
         glue = "com/centrilli/step_defs",
         dryRun = false, // when true, just compiles Step Definition and Feature files to verify the compilation errors
-        tags = "@CNTR-345",
+        tags = "",
         publish = false
 )
 

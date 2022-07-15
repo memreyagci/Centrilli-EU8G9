@@ -27,8 +27,8 @@ public class Employees_StepDefs {
         employeesPage.btnNavigationEmployees.click();
     }
 
-    @When("user clicks Create button")
-    public void user_clicks_create_button() {
+    @When("user clicks Create bbutton")
+    public void user_clicks_create_bbutton() {
         employeesPage.btnCreate.click();
     }
 
