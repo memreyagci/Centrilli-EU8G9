@@ -6,12 +6,6 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class Expenses_StepDefs {
-    BasePage basePage = new BasePage();
-
-    @Given("user is in Expenses page")
-    public void user_is_in_expenses_page() {
-        basePage.clickNavBarBtn("Expenses");
-    }
 
     @When("user clicks Expense Reports button")
     public void user_clicks_expense_reports_button() {
