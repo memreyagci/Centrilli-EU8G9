@@ -41,6 +41,6 @@ public class LoginPage {
     public WebElement btnLogIn;
 
     @FindBy(css = ".btn-link")
-    public WebElement resetPassword;
+    public WebElement btnResetPassword;
 
 }
