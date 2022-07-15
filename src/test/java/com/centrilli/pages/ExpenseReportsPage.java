@@ -13,21 +13,21 @@ public class ExpenseReportsPage {
 
 
     @FindBy(xpath = "//a[@data-menu-xmlid='hr_expense.menu_hr_expense_sheet_my_reports']")
-    WebElement btnExpenseReports;
+    public WebElement btnExpenseReports;
 
     @FindBy(xpath = "//button[contains(text(), 'Create')]")
-    WebElement btnCreate;
+    public WebElement btnCreate;
 
     @FindBy(xpath = "//input[@placeholder='e.g. Trip to NY']")
-    WebElement inputExpenseReportSummary;
+    public WebElement inputExpenseReportSummary;
 
     @FindBy(xpath = "//div[@name='employee_id']//span[@class='o_dropdown_button']")
-    WebElement dropdownBtnEmployee;
+    public WebElement dropdownBtnEmployee;
 
     @FindBy(xpath = "//p[text()='Expense Report created']")
-    WebElement textExpenseReportCreated;
+    public WebElement textExpenseReportCreated;
 
     @FindBy(xpath = "//li[@class='ui-menu-item'][1]")
-    WebElement firstEmployeeItem;
+    public WebElement firstEmployeeItem;
 
 }
