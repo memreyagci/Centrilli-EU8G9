@@ -18,16 +18,19 @@ public class ExpenseReportsPage {
     @FindBy(xpath = "//button[contains(text(), 'Create')]")
     public WebElement btnCreate;
 
+    @FindBy(xpath = "//button[contains(text(), 'Save')]")
+    public WebElement btnSave;
+
     @FindBy(xpath = "//input[@placeholder='e.g. Trip to NY']")
     public WebElement inputExpenseReportSummary;
 
-    @FindBy(xpath = "//div[@name='employee_id']//span[@class='o_dropdown_button']")
-    public WebElement dropdownBtnEmployee;
+    @FindBy(xpath = "//div[@name='employee_id']//input")
+    public WebElement dropdownInputEmployee;
 
     @FindBy(xpath = "//p[text()='Expense Report created']")
     public WebElement textExpenseReportCreated;
 
     @FindBy(xpath = "//li[@class='ui-menu-item'][1]")
-    public WebElement firstEmployeeItem;
+    public WebElement dropdownItemFirstEmployee;
 
 }
