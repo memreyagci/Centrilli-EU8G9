@@ -33,4 +33,15 @@ public class ExpenseReportsPage {
     @FindBy(xpath = "//li[@class='ui-menu-item'][1]")
     public WebElement dropdownItemFirstEmployee;
 
+    @FindBy(xpath = "//div[@class='o_notification_title']")
+    private WebElement divErrMsgTitle;
+
+    @FindBy(xpath = "//div[@class='o_notification_content']/ul/li[1]")
+    private WebElement liItemInvalidField;
+
+
+    public String getErrMsg() {
+        return divErrMsgTitle.getText().trim() + " " + liItemInvalidField.getText().trim();
+    }
+
 }
