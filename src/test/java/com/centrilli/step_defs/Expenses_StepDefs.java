@@ -44,4 +44,10 @@ public class Expenses_StepDefs {
         Assert.assertTrue(expenseReportsPage.textExpenseReportCreated.isDisplayed());
     }
 
+    @Then("{string} {string} error message is displayed")
+    public void error_message_is_displayed(String expectedErrMsgTitle, String expectedErrMsgContent) {
+        String expectedErrMsg = expectedErrMsgTitle + " " + expectedErrMsgContent;
+        Assert.assertEquals(expectedErrMsg, expenseReportsPage.getErrMsg());
+    }
+
 }
