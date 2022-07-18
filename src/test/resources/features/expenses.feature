@@ -23,11 +23,11 @@ Feature: Expense Manager should be able to create Expense Report Summary
 
 
   Scenario: Verify that the "The following fields are invalid: Expense Report Summary" error message is displayed when mandatory field Expense Report Summary left blank
-    When user clicks Expense Reports button
+    When user is in "Expense Reports" submenu
     And user clicks Create button in Expense Reports
     And user selects an employee
     And user clicks Save button in Expense Reports
     Then "The following fields are invalid:" "Expense Report Summary" error message is displayed
 
 
-  # Scenario: Verify that the "You cannot add expense lines of another employee" error message is displayed when selecting expenses of another employee when approving an expense on Expenses to Approve page.
+  #Scenario: Verify that the "You cannot add expense lines of another employee" error message is displayed when selecting expenses of another employee when approving an expense on Expenses to Approve page.
