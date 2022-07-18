@@ -12,9 +12,6 @@ public class ExpenseReportsPage {
     }
 
 
-    @FindBy(xpath = "//a[@data-menu-xmlid='hr_expense.menu_hr_expense_sheet_my_reports']")
-    public WebElement btnExpenseReports;
-
     @FindBy(xpath = "//button[contains(text(), 'Create')]")
     public WebElement btnCreate;
 
