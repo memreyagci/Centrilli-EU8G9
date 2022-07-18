@@ -1,6 +1,6 @@
-package com.centrilli.step_defs;
+package com.centrilli.step_defs.expenses;
 
-import com.centrilli.pages.ExpenseReportsToApprovePage;
+import com.centrilli.pages.expenses.ExpenseReportsToApprovePage;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;

@@ -1,4 +1,4 @@
-package com.centrilli.pages;
+package com.centrilli.pages.expenses;
 
 import com.centrilli.utilities.Driver;
 import org.openqa.selenium.WebElement;

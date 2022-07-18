@@ -1,6 +1,6 @@
-package com.centrilli.step_defs;
+package com.centrilli.step_defs.expenses;
 
-import com.centrilli.pages.ExpenseReportsPage;
+import com.centrilli.pages.expenses.ExpenseReportsPage;
 import com.centrilli.utilities.Driver;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
@@ -9,7 +9,7 @@ import org.junit.Assert;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class Expenses_StepDefs {
+public class ExpenseReports_StepDefs {
     ExpenseReportsPage expenseReportsPage = new ExpenseReportsPage();
 
 
