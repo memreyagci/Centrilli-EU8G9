@@ -112,4 +112,10 @@ public class PointOfSale_StepDefs {
         Assert.assertEquals("Expected value does not match actual value", expectedPointOfSale, pointOfSalePage.actualPointOfSale.getText());
         Assert.assertTrue("Actual value does not contain expected value", pointOfSalePage.actualOperationType.getText().contains(expectedOperationType));
     }
+
+    @Then("user should be able to see error message")
+    public void user_should_be_able_to_see_error_message() {
+        Assert.assertTrue(pointOfSalePage.errorMessage.isDisplayed());
+    }
+
 }

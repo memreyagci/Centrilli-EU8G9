@@ -62,6 +62,9 @@ public class PointOfSalePage {
     @FindBy (xpath = "//a[@name='picking_type_id']")
     public WebElement actualOperationType;
 
+    @FindBy (xpath = "//div[@class='o_notification_title']")
+    public WebElement errorMessage;
+
     public void selectOperationType(String operationType){
         try {
             for (WebElement eachType : operationTypes) {

@@ -1,3 +1,4 @@
+@elle
 Feature: Point of Sale functionality
 
   User story:
@@ -35,6 +36,17 @@ Feature: Point of Sale functionality
     And user clicks Save button in Point of Sale
     Then user should be able to see expected "Revel" title and expected "7yy" operation type
 
+  Scenario: Verify user cannot create new Point of Sale without Point of Sale name
+    When user clicks Create button in Point of Sale
+    And user enters "Fast Spring" in name input field
+    And user clicks Save button in Point of Sale
+    Then user should be able to see error message
+
+  Scenario: Verify user cannot create new Point of Sale without Operation type
+    When user clicks Create button in Point of Sale
+    And user selects "Return Operations" under inventory
+    And user clicks Save button in Point of Sale
+    Then user should be able to see error message
 
 
 
