@@ -20,5 +20,13 @@ Feature: Point of Sale functionality
     And user clicks List button in Point of Sale
     Then user should be able to see options in list
 
+    @elle
+  Scenario: Verify that the user can discard changes
+    When user clicks Create button in Point of Sale
+    And user enters "Fast Spring" in name input field
+    And user clicks Discard button
+    Then user should be able to return Point of Sale main page
+
+
 
 

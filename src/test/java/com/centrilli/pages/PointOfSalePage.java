@@ -44,6 +44,15 @@ public class PointOfSalePage {
     @FindBy (xpath = "//button[@aria-label='list']")
     public WebElement listButton;
 
+    @FindBy (xpath = "//div/button[contains(text(), 'Discard')]")
+    public WebElement discardButton;
+
+    @FindBy (xpath = "//button/span[.='Ok']")
+    public WebElement warningMessageConfirmation;
+
+    @FindBy (xpath = "//div[@class='o_control_panel']//li[@class='active']")
+    public WebElement mainPageHeader;
+
     public void selectOperationType(String operationType){
         try {
             for (WebElement eachType : operationTypes) {

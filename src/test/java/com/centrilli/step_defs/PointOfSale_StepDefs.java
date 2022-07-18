@@ -73,7 +73,17 @@ public class PointOfSale_StepDefs {
         BrowserUtils.verifyURLContains("list");
     }
 
+    @When("user clicks Discard button")
+    public void user_clicks_discard_button() {
+        pointOfSalePage.discardButton.click();
+        pointOfSalePage.warningMessageConfirmation.click();
+    }
 
+    @Then("user should be able to return Point of Sale main page")
+    public void user_should_be_able_to_return_point_of_sale_main_page() {
+        Assert.assertTrue(pointOfSalePage.mainPageHeader.isDisplayed());
+        BrowserUtils.verifyURLContains("list");
+    }
 
 
 }
