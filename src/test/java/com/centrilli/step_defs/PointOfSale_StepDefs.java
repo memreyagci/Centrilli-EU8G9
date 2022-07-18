@@ -51,4 +51,29 @@ public class PointOfSale_StepDefs {
         Assert.assertEquals("Expected value does not match actual value", expectedPointOfSale, pointOfSalePage.actualPointOfSale.getText());
     }
 
+    @When("user clicks Kanban button in Point of Sale")
+    public void user_clicks_kanban_button_in_point_of_sale() {
+        wait.until(ExpectedConditions.visibilityOf(pointOfSalePage.kanbanButton));
+        pointOfSalePage.kanbanButton.click();
+    }
+
+    @Then("user should be able to see options in kanban board")
+    public void user_should_be_able_to_see_options_in_kanban_board() {
+        BrowserUtils.verifyURLContains("kanban");
+    }
+
+    @Then("user clicks List button in Point of Sale")
+    public void user_clicks_list_button_in_point_of_sale() {
+        pointOfSalePage.listButton.click();
+    }
+
+    @Then("user should be able to see options in list")
+    public void user_should_be_able_to_see_options_in_list() {
+        wait.until(ExpectedConditions.urlContains("list"));
+        BrowserUtils.verifyURLContains("list");
+    }
+
+
+
+
 }

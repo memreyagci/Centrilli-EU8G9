@@ -1,19 +1,14 @@
 package com.centrilli.pages;
 
-import com.centrilli.utilities.BrowserUtils;
 import com.centrilli.utilities.Driver;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
+
 
 import java.util.List;
 
 public class PointOfSalePage {
-
-    WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 10);
 
     public PointOfSalePage(){
         PageFactory.initElements(Driver.getDriver(), this);
@@ -42,6 +37,12 @@ public class PointOfSalePage {
 
     @FindBy (xpath = "//h1/span")
     public WebElement actualPointOfSale;
+
+    @FindBy (xpath = "//button[@aria-label='kanban']")
+    public WebElement kanbanButton;
+
+    @FindBy (xpath = "//button[@aria-label='list']")
+    public WebElement listButton;
 
     public void selectOperationType(String operationType){
         try {
