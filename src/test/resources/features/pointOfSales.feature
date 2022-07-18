@@ -1,4 +1,3 @@
-@elle
 Feature: Point of Sale functionality
 
   User story:

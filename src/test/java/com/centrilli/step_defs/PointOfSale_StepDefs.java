@@ -115,6 +115,7 @@ public class PointOfSale_StepDefs {
 
     @Then("user should be able to see error message")
     public void user_should_be_able_to_see_error_message() {
+        wait.until(ExpectedConditions.visibilityOf(pointOfSalePage.errorMessage));
         Assert.assertTrue(pointOfSalePage.errorMessage.isDisplayed());
     }
 
