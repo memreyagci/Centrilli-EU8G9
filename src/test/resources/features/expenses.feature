@@ -6,7 +6,7 @@ Feature: Expense Manager should be able to create Expense Report Summary
 
 
   Scenario: Verify that the Expense Manager is able to create Expenses Report Summary by selecting "Create" option for each Employee.
-    When user clicks Expense Reports button
+    When user is in "Expense Reports" submenu
     And user clicks Create button in Expense Reports
     And user fills in Expense Report Summary field
     And user selects an employee
@@ -15,7 +15,7 @@ Feature: Expense Manager should be able to create Expense Report Summary
 
 
   Scenario: Verify that the "The following fields are invalid: Employee" error message is displayed when mandatory field Employee left blank
-    When user clicks Expense Reports button
+    When user is in "Expense Reports" submenu
     And user clicks Create button in Expense Reports
     And user fills in Expense Report Summary field
     And user clicks Save button in Expense Reports

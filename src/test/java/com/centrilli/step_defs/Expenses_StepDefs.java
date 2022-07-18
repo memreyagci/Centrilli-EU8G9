@@ -12,10 +12,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class Expenses_StepDefs {
     ExpenseReportsPage expenseReportsPage = new ExpenseReportsPage();
 
-    @When("user clicks Expense Reports button")
-    public void user_clicks_expense_reports_button() {
-        expenseReportsPage.btnExpenseReports.click();
-    }
 
     @When("user clicks Create button in Expense Reports")
     public void user_clicks_create_button_in_expense_reports() {
