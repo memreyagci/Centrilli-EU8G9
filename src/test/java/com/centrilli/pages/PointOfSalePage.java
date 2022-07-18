@@ -53,10 +53,32 @@ public class PointOfSalePage {
     @FindBy (xpath = "//div[@class='o_control_panel']//li[@class='active']")
     public WebElement mainPageHeader;
 
+    @FindBy (xpath = "//tr/td[@class='o_data_cell o_required_modifier']")
+    public List<WebElement> pointOfSales;
+
+    @FindBy (xpath = "//div/button[contains(text(), 'Edit')]")
+    public WebElement editButton;
+
+    @FindBy (xpath = "//a[@name='picking_type_id']")
+    public WebElement actualOperationType;
+
     public void selectOperationType(String operationType){
         try {
             for (WebElement eachType : operationTypes) {
                 if (eachType.getText().equals(operationType)) {
+                    eachType.click();
+                }
+            }
+        }catch (RuntimeException e){
+            e.getStackTrace();
+        }
+
+    }
+
+    public void selectPointOfSale(String pointOfSale){
+        try {
+            for (WebElement eachType : pointOfSales) {
+                if (eachType.getText().equals(pointOfSale)) {
                     eachType.click();
                 }
             }
