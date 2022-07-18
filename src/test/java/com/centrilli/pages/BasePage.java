@@ -30,14 +30,14 @@ public class BasePage {
     }
 
     public void clickSubMenuBtn(String subMenuName) {
-        String currentTitle = Driver.getDriver().getTitle();
+        String titleBeforeClick = Driver.getDriver().getTitle();
         WebElement subMenuBtn = Driver.getDriver().findElement(By.xpath("//div[@class='o_sub_menu_content']//span[contains(text(), '" + subMenuName + "')]/.."));
         subMenuBtn.click();
 
         /* It takes a while for submenu page to load, so this is necessary to not get an error.
         You can't simply check what title is, because it does not always match with button name itself.
         Thus, we check whether it is different from prior to clicking. */
-        wait.until(ExpectedConditions.not(ExpectedConditions.titleIs(currentTitle)));
+        wait.until(ExpectedConditions.not(ExpectedConditions.titleIs(titleBeforeClick)));
     }
 
 
