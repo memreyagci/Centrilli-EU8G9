@@ -12,12 +12,6 @@ public class ExpenseReportsPage {
     }
 
 
-    @FindBy(xpath = "//button[contains(text(), 'Create')]")
-    public WebElement btnCreate;
-
-    @FindBy(xpath = "//button[contains(text(), 'Save')]")
-    public WebElement btnSave;
-
     @FindBy(xpath = "//input[@placeholder='e.g. Trip to NY']")
     public WebElement inputExpenseReportSummary;
 
