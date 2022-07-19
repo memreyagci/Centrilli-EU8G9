@@ -19,8 +19,8 @@ public class BasePage {
     }
 
     public void clickNavBarBtn(String btnStr) {
-        String titleBeforeClick = Driver.getDriver().getTitle();
         WebElement navBarBtn = Driver.getDriver().findElement(By.xpath("//nav//span[contains(text(), '" + btnStr + "')]/.."));
+        String urlBeforeClick = Driver.getDriver().getCurrentUrl();
 
         // If navBarBtn is not displayed, it's in More menu because of reasons related to screen size, then it needs to be clicked first.
         if (navBarBtn.isDisplayed()) {
@@ -30,20 +30,15 @@ public class BasePage {
             navBarBtn.click();
         }
 
-        wait.until(ExpectedConditions.not(ExpectedConditions.titleIs(titleBeforeClick)));
+        wait.until(ExpectedConditions.not(ExpectedConditions.urlToBe(urlBeforeClick)));
     }
 
     public void clickSubMenuBtn(String subMenuName) {
-        String subMenuContentXpath = "//div[@class='o_main_content']";
-        String contentBeforeClick = Driver.getDriver().findElement(By.xpath(subMenuContentXpath)).getAttribute( "innerHTML");
-
+        String urlBeforeClick = Driver.getDriver().getCurrentUrl();
         WebElement subMenuBtn = Driver.getDriver().findElement(By.xpath("//div[@class='o_sub_menu_content']//span[normalize-space()='" + subMenuName + "']/.."));
         subMenuBtn.click();
 
-        /* It takes a while for submenu page to load, so this is necessary to not get an error.
-        Title doesn't always change, so checking it will not work in every case.
-        Instead, it is checking whether innerHTML of submenu content has changed. */
-        wait.until(ExpectedConditions.not(ExpectedConditions.attributeContains(By.xpath(subMenuContentXpath), "innerHTML", contentBeforeClick)));
+        wait.until(ExpectedConditions.not(ExpectedConditions.urlToBe(urlBeforeClick)));
     }
 
 
