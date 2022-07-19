@@ -53,6 +53,7 @@ public class BasePage {
             case "Save":
             case "Select":
                 WebElement button = Driver.getDriver().findElement(By.xpath("//button[normalize-space()='" + btnName + "']"));
+                wait.until(ExpectedConditions.elementToBeClickable(button));
                 button.click();
                 break;
 
