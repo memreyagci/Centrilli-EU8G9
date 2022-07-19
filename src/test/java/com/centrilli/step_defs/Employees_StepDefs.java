@@ -77,6 +77,7 @@ public class Employees_StepDefs {
 
     @Then("employee is listed in the search result")
     public void employee_is_listed() {
+        employeesPage.getSearchedEmployee("");
         Assert.assertTrue(employeesPage.getSearchedEmployee(employeeName).isDisplayed());
     }
 
