@@ -7,7 +7,7 @@ Feature: Point of Sale functionality
   Background: User is logged in and in Point of Sale page
     Given user is already logged in
     And user is in "Point of Sale" page
-    And user clicks Point of Sale under Configuration
+    And user clicks "Point of Sale" under Configuration
 
   @CNTR-384
   Scenario: Verify that the user can create new Point Of Sale

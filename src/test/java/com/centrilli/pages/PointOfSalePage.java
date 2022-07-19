@@ -14,9 +14,6 @@ public class PointOfSalePage {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
-    @FindBy (xpath = "//a[@href='/web#menu_id=496&action=676']")
-    public WebElement pointOfSale;
-
     @FindBy (xpath = "//div/button[contains(text(), 'Create')]")
     public WebElement createButton;
 

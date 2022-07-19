@@ -22,9 +22,9 @@ public class PointOfSale_StepDefs {
         basePage.clickNavBarBtn(pointOfSale);
     }
 
-    @When("user clicks Point of Sale under Configuration")
-    public void user_clicks_point_of_sale_under_configuration() {
-        pointOfSalePage.pointOfSale.click();
+    @When("user clicks {string} under Configuration")
+    public void user_clicks_under_configuration(String pointOfSale) {
+        basePage.clickNavBarBtn(pointOfSale);
     }
 
     @When("user clicks Create button in Point of Sale")
