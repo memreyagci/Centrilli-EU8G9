@@ -21,9 +21,6 @@ public class EmployeesPage {
     @FindBy(css = "[data-menu = '157']")
     public WebElement btnNavigationEmployees;
 
-    @FindBy(xpath = "//button[normalize-space(text()) = 'Create']")
-    public WebElement btnCreate;
-
     @FindBy(css = "[data-view-type = 'kanban']")
     public WebElement btnSwitchKanbanView;
 

@@ -1,10 +1,8 @@
 package com.centrilli.step_defs;
 
 import com.centrilli.pages.EmployeesPage;
-import com.centrilli.pages.LoginPage;
 import com.centrilli.utilities.Driver;
 import com.github.javafaker.Faker;
-import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -15,7 +13,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 
 public class Employees_StepDefs {
-    LoginPage loginPage = new LoginPage();
     EmployeesPage employeesPage = new EmployeesPage();
     WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 10);
 
@@ -25,11 +22,6 @@ public class Employees_StepDefs {
     @Given("user is on Employees page")
     public void user_is_on_employees_page() {
         employeesPage.btnNavigationEmployees.click();
-    }
-
-    @When("user clicks Create bbutton")
-    public void user_clicks_create_bbutton() {
-        employeesPage.btnCreate.click();
     }
 
     @When("user clicks Kanban button")
@@ -47,7 +39,7 @@ public class Employees_StepDefs {
         employeesPage.inputName.sendKeys("SomeName");
     }
 
-    @When("user clicks Save button")
+    @When("user clicks Save button in New Employees page")
     public void clicks_save_button() {
         employeesPage.btnSave.click();
     }
@@ -55,11 +47,6 @@ public class Employees_StepDefs {
     @When("user types in a name to Name field")
     public void user_types_in_to_name_field() {
         employeesPage.inputName.sendKeys(employeeName);
-    }
-
-    @When("user clicks the Employees module")
-    public void user_clicks_the_employees_module() {
-        employeesPage.btnNavigationEmployees.click();
     }
 
     @When("user searches the name on the search box")
