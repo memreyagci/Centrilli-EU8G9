@@ -47,12 +47,13 @@ public class BasePage {
     //Update the cases as you find the eligible buttons
     public void clickButton(String btnName) throws Exception {
         switch (btnName) {
-            case "Save":
-            case "Create":
-            case "Cancel":
-            case "Edit":
-            case "Discard":
             case "Approve":
+            case "Cancel":
+            case "Create":
+            case "Discard":
+            case "Edit":
+            case "Save":
+            case "Select":
                 WebElement button = Driver.getDriver().findElement(By.xpath("//button[normalize-space()='" + btnName + "']"));
                 button.click();
                 break;
