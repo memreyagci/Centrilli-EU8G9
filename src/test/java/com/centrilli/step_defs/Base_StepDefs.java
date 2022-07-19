@@ -2,6 +2,7 @@ package com.centrilli.step_defs;
 
 import com.centrilli.pages.BasePage;
 import io.cucumber.java.en.Given;
+import io.cucumber.java.en.When;
 
 public class Base_StepDefs {
     BasePage basePage = new BasePage();
@@ -11,4 +12,13 @@ public class Base_StepDefs {
         basePage.clickNavBarBtn(navBarBtnText);
     }
 
+    @When("user is in {string} submenu")
+    public void user_is_in_subpage(String subMenuName) {
+        basePage.clickSubMenuBtn(subMenuName);
+    }
+
+    @When("user clicks {string} button")
+    public void user_clicks_save_button(String btnName) throws Exception {
+        basePage.clickButton(btnName);
+    }
 }

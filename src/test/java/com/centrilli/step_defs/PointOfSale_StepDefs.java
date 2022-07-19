@@ -1,10 +1,8 @@
 package com.centrilli.step_defs;
 
-import com.centrilli.pages.BasePage;
 import com.centrilli.pages.PointOfSalePage;
 import com.centrilli.utilities.BrowserUtils;
 import com.centrilli.utilities.Driver;
-import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
@@ -13,19 +11,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class PointOfSale_StepDefs {
 
-    BasePage basePage = new BasePage();
     PointOfSalePage pointOfSalePage = new PointOfSalePage();
     WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 10);
-
-    @Given("user is in {string} page")
-    public void user_is_in_page(String pointOfSale) {
-        basePage.clickNavBarBtn(pointOfSale);
-    }
-
-    @When("user clicks Point of Sale under Configuration")
-    public void user_clicks_point_of_sale_under_configuration() {
-        pointOfSalePage.pointOfSale.click();
-    }
 
     @When("user clicks Create button in Point of Sale")
     public void user_clicks_create_button_in_point_of_sale() {
