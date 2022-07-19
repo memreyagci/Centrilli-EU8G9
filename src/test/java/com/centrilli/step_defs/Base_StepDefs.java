@@ -17,4 +17,8 @@ public class Base_StepDefs {
         basePage.clickSubMenuBtn(subMenuName);
     }
 
+    @When("user clicks {string} button")
+    public void user_clicks_save_button(String btnName) throws Exception {
+        basePage.clickButton(btnName);
+    }
 }

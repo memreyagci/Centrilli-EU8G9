@@ -8,6 +8,8 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.util.ArrayList;
+
 public class BasePage {
 
     WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 20);
@@ -40,11 +42,36 @@ public class BasePage {
         wait.until(ExpectedConditions.not(ExpectedConditions.titleIs(titleBeforeClick)));
     }
 
+    //Update the cases as you find the eligible buttons
+    public void clickButton(String btnName) throws Exception {
+
+        switch (btnName) {
+            case "Save":
+            case "Create":
+            case "Cancel":
+            case "Edit":
+            case "Discard":
+            case "Approve":
+
+        WebElement button = Driver.getDriver().findElement(By.xpath("//button[normalize-space()='" + btnName + "']"));
+        button.click();
+                break;
+
+            default:
+                throw new Exception("Unknown button");
+
+        }
+
+    }
 
     @FindBy(xpath = "//a[@data-menu='120']/span[contains(text(), 'Calendar')]")
     public WebElement calendarModule;
 
     @FindBy(id = "menu_more_container")
     public WebElement dropdownMenuMore;
+
+
+    @FindBy(xpath = "//button[normalize-space()='Save']")
+    public WebElement saveButton;
 
 }
