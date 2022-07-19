@@ -2,6 +2,7 @@ package com.centrilli.pages;
 
 import com.centrilli.utilities.ConfigurationReader;
 import com.centrilli.utilities.Driver;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -9,8 +10,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class LoginPage {
-    WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 20);
 
+    WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 20);
 
     public LoginPage() {
         PageFactory.initElements(Driver.getDriver(), this);
@@ -28,9 +29,9 @@ public class LoginPage {
     }
 
 
+
     @FindBy(id = "login")
     public WebElement inputEmailAddress;
-
 
     @FindBy(id = "password")
     public WebElement inputPassword;
@@ -38,7 +39,6 @@ public class LoginPage {
 
     @FindBy(xpath = "//button[text()='Log in']")
     public WebElement btnLogIn;
-
 
     @FindBy(css = ".btn-link")
     public WebElement btnResetPassword;
