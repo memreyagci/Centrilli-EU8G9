@@ -1,4 +1,5 @@
-
+@regression
+@smoke
 Feature: Sales functionality
   User Story :
   As a Sales Manager, I should be able to create and edit a new customers from "Sales" module

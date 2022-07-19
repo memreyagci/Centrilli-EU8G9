@@ -1,3 +1,5 @@
+@regression
+@smoke
 @CNTR-395
 Feature: Expense Manager should be able to create Expense Report Summary
 

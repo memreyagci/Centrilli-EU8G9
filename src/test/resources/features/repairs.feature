@@ -1,4 +1,5 @@
-
+@regression
+@smoke
 Feature: Sales functionality
   User Story :
   As a POS Manager I should be able to create Repair Order
