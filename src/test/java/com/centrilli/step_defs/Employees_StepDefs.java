@@ -52,6 +52,7 @@ public class Employees_StepDefs {
     @When("user searches the name on the search box")
     public void user_types_in_to_search_box() {
         wait.until(ExpectedConditions.visibilityOf(employeesPage.inputSearchBox));
+        employeesPage.inputSearchBox.sendKeys(""); // Interact with the element so that it is attached to the DOM. Otherwise, it gives "element is not attached to the page document" error
         employeesPage.inputSearchBox.sendKeys(employeeName + Keys.ENTER);
     }
 
