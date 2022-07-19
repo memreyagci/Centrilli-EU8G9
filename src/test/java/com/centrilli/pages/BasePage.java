@@ -19,6 +19,7 @@ public class BasePage {
     }
 
     public void clickNavBarBtn(String btnStr) {
+        String titleBeforeClick = Driver.getDriver().getTitle();
         WebElement navBarBtn = Driver.getDriver().findElement(By.xpath("//nav//span[contains(text(), '" + btnStr + "')]/.."));
 
         // If navBarBtn is not displayed, it's in More menu because of reasons related to screen size, then it needs to be clicked first.
@@ -29,6 +30,7 @@ public class BasePage {
             navBarBtn.click();
         }
 
+        wait.until(ExpectedConditions.not(ExpectedConditions.titleIs(titleBeforeClick)));
     }
 
     public void clickSubMenuBtn(String subMenuName) {
@@ -44,7 +46,6 @@ public class BasePage {
 
     //Update the cases as you find the eligible buttons
     public void clickButton(String btnName) throws Exception {
-
         switch (btnName) {
             case "Save":
             case "Create":
@@ -52,14 +53,12 @@ public class BasePage {
             case "Edit":
             case "Discard":
             case "Approve":
-
-        WebElement button = Driver.getDriver().findElement(By.xpath("//button[normalize-space()='" + btnName + "']"));
-        button.click();
+                WebElement button = Driver.getDriver().findElement(By.xpath("//button[normalize-space()='" + btnName + "']"));
+                button.click();
                 break;
 
             default:
                 throw new Exception("Unknown button");
-
         }
 
     }
