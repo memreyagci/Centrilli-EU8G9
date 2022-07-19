@@ -1,3 +1,4 @@
+@regression
 @CNTR-390
 Feature: Point of Sale functionality
 

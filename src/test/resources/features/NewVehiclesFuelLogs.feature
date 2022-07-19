@@ -1,3 +1,4 @@
+@regression
 Feature: new Vehicles Fuel Logs
   Verify that USER can create new Vehicles Fuel Logs
 

@@ -1,4 +1,4 @@
-
+@regression
 @CNTR-351
 Feature:Vehicles Services Logs Test
 

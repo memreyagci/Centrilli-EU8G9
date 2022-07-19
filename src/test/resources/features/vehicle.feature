@@ -1,3 +1,5 @@
+@regression
+@smoke
 @CNTR-345
 Feature: Centrilli application create a new vehicle  feature
   User Story: As a user, I should be able to create a new vehicle model

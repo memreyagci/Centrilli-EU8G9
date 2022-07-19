@@ -1,3 +1,5 @@
+@regression
+@smoke
 @CNTR-341
 Feature: Employee Menu
 
