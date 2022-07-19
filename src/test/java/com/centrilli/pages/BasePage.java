@@ -34,15 +34,18 @@ public class BasePage {
     }
 
     public void clickSubMenuBtn(String subMenuName) {
-        String titleBeforeClick = Driver.getDriver().getTitle();
+        String subMenuContentXpath = "//div[@class='o_main_content']";
+        String contentBeforeClick = Driver.getDriver().findElement(By.xpath(subMenuContentXpath)).getAttribute( "innerHTML");
+
         WebElement subMenuBtn = Driver.getDriver().findElement(By.xpath("//div[@class='o_sub_menu_content']//span[normalize-space()='" + subMenuName + "']/.."));
         subMenuBtn.click();
 
         /* It takes a while for submenu page to load, so this is necessary to not get an error.
-        You can't simply check what title is, because it does not always match with button name itself.
-        Thus, we check whether it is different from prior to clicking. */
-        wait.until(ExpectedConditions.not(ExpectedConditions.titleIs(titleBeforeClick)));
+        Title doesn't always change, so checking it will not work in every case.
+        Instead, it is checking whether innerHTML of submenu content has changed. */
+        wait.until(ExpectedConditions.not(ExpectedConditions.attributeContains(By.xpath(subMenuContentXpath), "innerHTML", contentBeforeClick)));
     }
+
 
     //Update the cases as you find the eligible buttons
     public void clickButton(String btnName) throws Exception {
