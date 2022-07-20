@@ -1,3 +1,5 @@
+@regression
+@smoke
 @CNTR-363
 Feature: Centrilli application calendar feature
 

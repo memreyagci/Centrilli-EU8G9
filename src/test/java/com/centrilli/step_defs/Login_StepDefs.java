@@ -4,6 +4,7 @@ import com.centrilli.pages.LoginPage;
 import com.centrilli.utilities.ConfigurationReader;
 import com.centrilli.utilities.Driver;
 import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 
 
 public class Login_StepDefs {
@@ -11,10 +12,12 @@ public class Login_StepDefs {
 
     @Then("User is logged in")
     public void user_is_logged_in() {
-        Driver.getDriver().get(ConfigurationReader.getProperty("project.url"));
-        loginPage.inputEmailAddress.sendKeys(ConfigurationReader.getProperty("posmanager.email"));
-        loginPage.inputPassword.sendKeys(ConfigurationReader.getProperty("posmanager.password"));
-        loginPage.btnLogIn.click();
-
+        loginPage.login();
     }
+
+    @When("user is logged in as {string}")
+    public void user_is_logged_in_as(String user) throws Exception {
+        loginPage.login(user);
+    }
+
 }

@@ -1,3 +1,4 @@
+@regression
 @CNTR-369
 Feature: User can create new Costs
 

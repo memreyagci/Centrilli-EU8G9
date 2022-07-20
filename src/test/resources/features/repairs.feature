@@ -1,3 +1,5 @@
+@regression
+@smoke
 Feature: Sales functionality
   User Story :
   As a POS Manager I should be able to create Repair Order
@@ -21,7 +23,6 @@ Feature: Sales functionality
 
   Scenario: Verify that the user can discard changes
     When User click's create button in repair
-    And User chooses a product to repair
     Then Verify that user can discard
 
 
@@ -34,6 +35,5 @@ Feature: Sales functionality
 
   Scenario: Verify that the user can delete Repair Order
     When User click's chosen products radio button in repair
-    And User click's action button in repair
     And User click's Delete in repair
     Then Verify chosen product deleted
