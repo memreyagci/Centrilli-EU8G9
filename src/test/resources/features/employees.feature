@@ -28,9 +28,7 @@ Feature: Employee Menu
 
   @CNTR-337
   Scenario: Verify that "Employee created" message appears under full profile
-    When user clicks "Create" button
-    And user fills in Name field
-    And user clicks "Save" button
+    When user creates an employee
     Then 'Employee created' message appears under full profile
 
 
@@ -43,9 +41,7 @@ Feature: Employee Menu
 
   @CNTR-339
   Scenario: Verify that the created employee is listed after clicking the Employees module
-    When user clicks "Create" button
-    And user types in a name to Name field
-    And user clicks "Save" button
+    Given user creates an employee
     And user is in "Employees" module
-    And user searches the name on the search box
+    When user searches the employee name
     Then employee is listed in the search result
