@@ -43,7 +43,7 @@ public class BasePage {
 
 
     //Update the cases as you find the eligible buttons
-    public void clickButton(String btnName) throws Exception {
+    public void clickButton(String btnName) {
         switch (btnName) {
             case "Approve":
             case "Cancel":
@@ -60,7 +60,11 @@ public class BasePage {
                 break;
 
             default:
-                throw new Exception("Unknown button");
+                try {
+                    throw new Exception("Unknown button");
+                } catch (Exception e) {
+                    throw new RuntimeException(e);
+                }
         }
 
     }
