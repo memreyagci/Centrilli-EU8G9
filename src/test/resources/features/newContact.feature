@@ -2,9 +2,9 @@ Feature: Create new CONTACTS
 
   User story: As a POS Manager I should be able to create notes
 
-  Background: POs manager enters on centrilli web app
-    Given
-    And
+  Background: POs manager enters on Centrilli web app
+    Given  User is logged in as PosManager
+    And    User is in "Contacts" module
 
 
   Scenario: Verify that the user can create new contact
@@ -38,4 +38,4 @@ Feature: Create new CONTACTS
   When
   And
   And
-    Then
+  Then
