@@ -10,28 +10,21 @@ Feature: Expense Manager should be able to create Expense Report Summary
   @CNTR-391
   Scenario: Verify that the Expense Manager is able to create Expenses Report Summary by selecting "Create" option for each Employee.
     Given user is in "Expense Reports" submenu
-    When user clicks "Create" button
-    And user fills in Expense Report Summary field
-    And user selects an employee
-    And user clicks "Save" button
+    When user creates an Expense Report
     Then 'Expense Report created' message appears
 
 
   @CNTR-392
   Scenario: Verify that the "The following fields are invalid: Employee" error message is displayed when mandatory field Employee left blank
     Given user is in "Expense Reports" submenu
-    When user clicks "Create" button
-    And user fills in Expense Report Summary field
-    And user clicks "Save" button
+    When user creates an employee by filling in "Employee"
     Then "The following fields are invalid:" "Employee" error message is displayed
 
 
   @CNTR-393
   Scenario: Verify that the "The following fields are invalid: Expense Report Summary" error message is displayed when mandatory field Expense Report Summary left blank
     Given user is in "Expense Reports" submenu
-    When user clicks "Create" button
-    And user selects an employee
-    And user clicks "Save" button
+    When user creates an employee by filling in "Expense Report Summary"
     Then "The following fields are invalid:" "Expense Report Summary" error message is displayed
 
 
