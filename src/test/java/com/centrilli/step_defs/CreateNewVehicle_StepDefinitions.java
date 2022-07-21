@@ -17,7 +17,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class CreateNewVehicle_StepDefinitions {
     VehiclePages VehiclePages = new VehiclePages();
-    LoginPage loginPage = new LoginPage();
+
     WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 10);
 
 
