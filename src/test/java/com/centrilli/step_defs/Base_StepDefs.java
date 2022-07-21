@@ -18,7 +18,7 @@ public class Base_StepDefs {
     }
 
     @When("user clicks {string} button")
-    public void user_clicks_save_button(String btnName) throws Exception {
+    public void user_clicks_save_button(String btnName) {
         basePage.clickButton(btnName);
     }
 }

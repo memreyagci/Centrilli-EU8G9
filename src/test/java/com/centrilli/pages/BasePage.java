@@ -19,8 +19,8 @@ public class BasePage {
     }
 
     public void clickNavBarBtn(String btnStr) {
-        String titleBeforeClick = Driver.getDriver().getTitle();
         WebElement navBarBtn = Driver.getDriver().findElement(By.xpath("//nav//span[contains(text(), '" + btnStr + "')]/.."));
+        String urlBeforeClick = Driver.getDriver().getCurrentUrl();
 
         // If navBarBtn is not displayed, it's in More menu because of reasons related to screen size, then it needs to be clicked first.
         if (navBarBtn.isDisplayed()) {
@@ -30,22 +30,20 @@ public class BasePage {
             navBarBtn.click();
         }
 
-        wait.until(ExpectedConditions.not(ExpectedConditions.titleIs(titleBeforeClick)));
+        wait.until(ExpectedConditions.not(ExpectedConditions.urlToBe(urlBeforeClick)));
     }
 
     public void clickSubMenuBtn(String subMenuName) {
-        String titleBeforeClick = Driver.getDriver().getTitle();
+        String urlBeforeClick = Driver.getDriver().getCurrentUrl();
         WebElement subMenuBtn = Driver.getDriver().findElement(By.xpath("//div[@class='o_sub_menu_content']//span[normalize-space()='" + subMenuName + "']/.."));
         subMenuBtn.click();
 
-        /* It takes a while for submenu page to load, so this is necessary to not get an error.
-        You can't simply check what title is, because it does not always match with button name itself.
-        Thus, we check whether it is different from prior to clicking. */
-        wait.until(ExpectedConditions.not(ExpectedConditions.titleIs(titleBeforeClick)));
+        wait.until(ExpectedConditions.not(ExpectedConditions.urlToBe(urlBeforeClick)));
     }
 
+
     //Update the cases as you find the eligible buttons
-    public void clickButton(String btnName) throws Exception {
+    public void clickButton(String btnName) {
         switch (btnName) {
             case "Approve":
             case "Cancel":
@@ -54,12 +52,19 @@ public class BasePage {
             case "Edit":
             case "Save":
             case "Select":
+            case "Ok":
+            case "Action":
                 WebElement button = Driver.getDriver().findElement(By.xpath("//button[normalize-space()='" + btnName + "']"));
+                wait.until(ExpectedConditions.elementToBeClickable(button));
                 button.click();
                 break;
 
             default:
-                throw new Exception("Unknown button");
+                try {
+                    throw new Exception("Unknown button");
+                } catch (Exception e) {
+                    throw new RuntimeException(e);
+                }
         }
 
     }

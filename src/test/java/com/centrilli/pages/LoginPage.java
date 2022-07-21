@@ -11,7 +11,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class LoginPage {
 
-    WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 20);
+    WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 60);
 
     public LoginPage() {
         PageFactory.initElements(Driver.getDriver(), this);
@@ -26,6 +26,21 @@ public class LoginPage {
 
         // Needed to wait for Inbox page to load after login, otherwise it directs to it later on, thus doesn't end up on desired page
         wait.until(ExpectedConditions.titleContains("#Inbox"));
+    }
+
+    public void login(String user) throws Exception {
+        if (user.equalsIgnoreCase("posmanager") || user.equalsIgnoreCase("salesmanager")) {
+            Driver.getDriver().get(ConfigurationReader.getProperty("project.url"));
+
+            inputEmailAddress.sendKeys(ConfigurationReader.getProperty(user + ".email"));
+            inputPassword.sendKeys(ConfigurationReader.getProperty(user + ".password"));
+            btnLogIn.click();
+
+            // Needed to wait for Inbox page to load after login, otherwise it directs to it later on, thus doesn't end up on desired page
+            wait.until(ExpectedConditions.titleContains("#Inbox"));
+        } else {
+            throw new Exception("Invalid centrilli user: " + user);
+        }
     }
 
 

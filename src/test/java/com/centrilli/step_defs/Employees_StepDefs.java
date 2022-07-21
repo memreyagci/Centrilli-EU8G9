@@ -1,10 +1,8 @@
 package com.centrilli.step_defs;
 
 import com.centrilli.pages.EmployeesPage;
-import com.centrilli.pages.LoginPage;
 import com.centrilli.utilities.Driver;
 import com.github.javafaker.Faker;
-import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -15,21 +13,21 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 
 public class Employees_StepDefs {
-    LoginPage loginPage = new LoginPage();
     EmployeesPage employeesPage = new EmployeesPage();
     WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 10);
 
     private final String employeeName = new Faker().name().name();
 
+    @When("user creates an employee")
+    public void user_creates_an_employee() {
+        employeesPage.clickButton("Create");
+        employeesPage.inputName.sendKeys(employeeName);
+        employeesPage.clickButton("Save");
+    }
 
     @Given("user is on Employees page")
     public void user_is_on_employees_page() {
         employeesPage.btnNavigationEmployees.click();
-    }
-
-    @When("user clicks Create bbutton")
-    public void user_clicks_create_bbutton() {
-        employeesPage.btnCreate.click();
     }
 
     @When("user clicks Kanban button")
@@ -42,29 +40,15 @@ public class Employees_StepDefs {
         employeesPage.btnSwitchListView.click();
     }
 
-    @When("user fills in Name field")
-    public void fills_in_name_field() {
-        employeesPage.inputName.sendKeys("SomeName");
-    }
-
-    @When("user clicks Save button")
+    @When("user clicks Save button in New Employees page")
     public void clicks_save_button() {
         employeesPage.btnSave.click();
     }
 
-    @When("user types in a name to Name field")
-    public void user_types_in_to_name_field() {
-        employeesPage.inputName.sendKeys(employeeName);
-    }
-
-    @When("user clicks the Employees module")
-    public void user_clicks_the_employees_module() {
-        employeesPage.btnNavigationEmployees.click();
-    }
-
-    @When("user searches the name on the search box")
-    public void user_types_in_to_search_box() {
+    @When("user searches the employee name")
+    public void user_searches_the_employee_name() {
         wait.until(ExpectedConditions.visibilityOf(employeesPage.inputSearchBox));
+        employeesPage.inputSearchBox.sendKeys(""); // Interact with the element so that it is attached to the DOM. Otherwise, it gives "element is not attached to the page document" error
         employeesPage.inputSearchBox.sendKeys(employeeName + Keys.ENTER);
     }
 
@@ -90,6 +74,7 @@ public class Employees_StepDefs {
 
     @Then("employee is listed in the search result")
     public void employee_is_listed() {
+        employeesPage.getSearchedEmployee("");
         Assert.assertTrue(employeesPage.getSearchedEmployee(employeeName).isDisplayed());
     }
 

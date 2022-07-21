@@ -1,3 +1,4 @@
+@regression
 Feature:POS Manager should be able to create notes
 
   Background:

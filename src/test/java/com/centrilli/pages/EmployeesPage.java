@@ -6,7 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class EmployeesPage {
+public class EmployeesPage extends BasePage {
 
     public EmployeesPage() {
         PageFactory.initElements(Driver.getDriver(), this);
@@ -14,15 +14,12 @@ public class EmployeesPage {
 
 
     public WebElement getSearchedEmployee(String employeeName) {
-        return Driver.getDriver().findElement(By.xpath("//span[.='" + employeeName + "']"));
+        return Driver.getDriver().findElement(By.xpath("//span[.=\"" + employeeName + "\"]"));
     }
 
 
     @FindBy(css = "[data-menu = '157']")
     public WebElement btnNavigationEmployees;
-
-    @FindBy(xpath = "//button[normalize-space(text()) = 'Create']")
-    public WebElement btnCreate;
 
     @FindBy(css = "[data-view-type = 'kanban']")
     public WebElement btnSwitchKanbanView;

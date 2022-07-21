@@ -1,11 +1,12 @@
 package com.centrilli.pages.expenses;
 
+import com.centrilli.pages.BasePage;
 import com.centrilli.utilities.Driver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class ExpenseReportsPage {
+public class ExpenseReportsPage extends BasePage {
 
     public ExpenseReportsPage() {
         PageFactory.initElements(Driver.getDriver(), this);

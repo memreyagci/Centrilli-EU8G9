@@ -1,14 +1,16 @@
+@regression
+@smoke
 @CNTR-341
 Feature: Employee Menu
 
   Background: Verify that user is logged in
     Given user is logged in as PosManager
-    And user is on Employees page
+    And user is in "Employees" module
 
 
   @CNTR-334
   Scenario: Verify that Create button works as expected
-    When user clicks Create bbutton
+    When user clicks "Create" button
     Then employee creation page shows up
 
 
@@ -26,24 +28,20 @@ Feature: Employee Menu
 
   @CNTR-337
   Scenario: Verify that "Employee created" message appears under full profile
-    When user clicks Create button
-    And user fills in Name field
-    And user clicks Save button
+    When user creates an employee
     Then 'Employee created' message appears under full profile
 
 
   @CNTR-338
   Scenario: Verify that user is not able create an employee without specifying the mandatory Name field
-    When user clicks Create button
-    And user clicks Save button
+    When user clicks "Create" button
+    And user clicks Save button in New Employees page
     Then Name field is highlighted
 
 
   @CNTR-339
   Scenario: Verify that the created employee is listed after clicking the Employees module
-    When user clicks Create button
-    And user types in a name to Name field
-    And user clicks Save button
-    And user clicks the Employees module
-    And user searches the name on the search box
+    Given user creates an employee
+    And user is in "Employees" module
+    When user searches the employee name
     Then employee is listed in the search result
