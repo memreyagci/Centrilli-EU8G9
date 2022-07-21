@@ -1,5 +1,7 @@
 package com.centrilli.step_defs;
 
+import com.centrilli.pages.ContactsPage;
+import com.centrilli.pages.HomePage;
 import com.centrilli.pages.LoginPage;
 import com.centrilli.utilities.BrowserUtils;
 import com.centrilli.utilities.Driver;
