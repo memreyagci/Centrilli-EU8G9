@@ -18,14 +18,14 @@ Feature: Expense Manager should be able to create Expense Report Summary
   Scenario: Verify that the "The following fields are invalid: Employee" error message is displayed when mandatory field Employee left blank
     Given user is in "Expense Reports" submenu
     When user creates an employee by filling in "Employee"
-    Then "The following fields are invalid:" "Employee" error message is displayed
+    Then "The following fields are invalid:" "Expense Report Summary" error message is displayed
 
 
   @CNTR-393
   Scenario: Verify that the "The following fields are invalid: Expense Report Summary" error message is displayed when mandatory field Expense Report Summary left blank
     Given user is in "Expense Reports" submenu
     When user creates an employee by filling in "Expense Report Summary"
-    Then "The following fields are invalid:" "Expense Report Summary" error message is displayed
+    Then "The following fields are invalid:" "Employee" error message is displayed
 
 
   @CNTR-394
