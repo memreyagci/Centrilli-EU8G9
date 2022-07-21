@@ -4,12 +4,12 @@ Feature: Create new CONTACTS
 
 
   Background:
-    Given  User is logged in with valid credentials
-    And    user is in Customers submenu
+    Given  User is logged in with valid credentials.
+    And    user is in Customers menu
 
 
   Scenario: Verify that the user can create new contact
-    When  User clicks Create button
+    When User clicks Create bttn
     And   Enters name and contact name on according fields
     And   Clicks save button
     Then  Verify that new contact is created

@@ -24,29 +24,15 @@ public class NewContact_StepDefs {
     String customerName = faker.bothify("?????? ??????");
 
 
-    @Given("User is logged in with valid credentials")
+
+    @Given("User is logged in with valid credentials.")
     public void userIsLoggedInWithValidCredentials() {
         Driver.getDriver().get("https://qa.centrilli.com/");
         loginPage.userName.sendKeys("posmanager10@info.com");
         loginPage.password.sendKeys("posmanager");
         loginPage.loginButton.click();
         wait.until(ExpectedConditions.titleContains("#Inbox"));
-
     }
-
-
-    @And("user is in Customers submenu")
-    public void userIsInCustomersSubmenu() {
-        BrowserUtils.waitFor(1);
-        homePage.contactsElement.click();
-    }
-
-
-    @When("User clicks Create button")
-    public void userClicksCreateButton() {
-        contactsPage.createButton.click();
-    }
-
 
     @And("Enters name and contact name on according fields")
     public void entersNameAndContactNameOnAccordingFields() {
@@ -124,4 +110,17 @@ public class NewContact_StepDefs {
         BrowserUtils.waitFor(2);
         Assert.assertFalse(Driver.getDriver().getTitle().contains(customerName));
     }
+
+    @And("user is in Customers menu")
+    public void userIsInCustomersMenu() {
+        BrowserUtils.waitFor(1);
+        homePage.contactsElement.click();
+    }
+
+    @When("User clicks Create bttn")
+    public void userClicksCreateBttn() {
+        contactsPage.createButton.click();
+    }
+
+
 }
