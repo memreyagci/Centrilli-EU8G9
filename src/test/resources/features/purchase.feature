@@ -12,7 +12,31 @@ Feature: POS Manager should be able to create new PURCHASE - Vendor Bill
     When user clicks "Create" button
     And user enters Vendor name
     And user clicks "Save" button
-    Then user should be able to see expected Draft Bill title
+    Then user sees expected Draft Bill title
+
+    Scenario: Verify that the user can switch Kanban-List view
+      When user clicks Kanban button
+      Then user can switch Kanban view
+      And user clicks List button
+      Then user can switch List view
+
+   Scenario: Verify that the user can discard changes
+     When user clicks "Create" button
+     And user enters Vendor name
+     And user clicks Discard button
+     Then user returns Vendor Bills
+
+
+     Scenario:Verify that the user can edit Vendor Bill
+       When user clicks "Edit" button
+       And user changes Vendor name
+       And user clicks "Save" button
+       Then Vendor name changes
+
+
+
+       Scenario:Verify that the user can delete Vendor Bill
+         When user clicks "Delete"
 
 
 
