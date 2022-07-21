@@ -9,4 +9,21 @@ public class PurchasePage {
     public PurchasePage() {PageFactory.initElements(Driver.getDriver(),this);}
 
 
+    @FindBy(xpath = "//div[@name='partner_id']//input")
+    public WebElement vendorBox;
+
+
+
+
+    @FindBy (xpath = "//label[.='Draft Bill']")
+    public WebElement draftBillTitle;
+
+    @FindBy (xpath = "//li[.='Vendor Bills']")
+    public WebElement vendorBillsTitle;
+
+    @FindBy (xpath = "//a[@name='partner_id']")
+    public WebElement vendorName;
+
+
     }
+
