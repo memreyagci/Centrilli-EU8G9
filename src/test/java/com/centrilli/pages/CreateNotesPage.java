@@ -29,16 +29,43 @@ public class CreateNotesPage {
     @FindBy(xpath = "//p[text()='Note created']")
     public WebElement elementP;
 
-   /* @FindBy( " ")
-    public WebElement
+    @FindBy(xpath = "//button[@aria-label='kanban'] ")
+    public WebElement kanbanButton;
 
-    @FindBy("")
-    public WebElement
+    @FindBy (xpath = "//button[@aria-label='list']")
+    public WebElement listButton;
 
-    @FindBy("")
-    public WebElement
+    @FindBy(css=".o_form_button_cancel")
+    public WebElement discardButton;
 
-    */
+    @FindBy(xpath = "//button/span[.='Ok']")
+    public WebElement warningMessageConfirmation;
+
+    @FindBy(xpath = "(//td[.='New'])[1]")
+    public WebElement note;
+
+    @FindBy(xpath = "//div/button[contains(text(),'Edit')]")
+    public WebElement editButton;
+
+    @FindBy(xpath = "//div[@class='note-editable panel-body']")
+    public WebElement textBox;
+
+    @FindBy(xpath = "//div[@class='o_readonly']/p")
+    public WebElement textMessage;
+
+    @FindBy(xpath = "//button[contains(text(), 'Action')]")
+    public WebElement actionButton;
+
+    @FindBy(xpath = "//a[contains(text(), 'Delete')]")
+    public WebElement deleteButton;
+
+    @FindBy(xpath = "//span[.='Ok']")
+    public WebElement okButton;
+
+
+
+
+
 
 
 
