@@ -1,11 +1,13 @@
 package com.centrilli.pages.expenses;
 
+import com.centrilli.pages.BasePage;
 import com.centrilli.utilities.Driver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class ExpenseReportsToApprovePage {
+
+public class ExpenseReportsToApprovePage extends BasePage {
 
     public ExpenseReportsToApprovePage() {
         PageFactory.initElements(Driver.getDriver(), this);

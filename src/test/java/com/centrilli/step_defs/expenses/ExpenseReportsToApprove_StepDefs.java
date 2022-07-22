@@ -9,19 +9,17 @@ public class ExpenseReportsToApprove_StepDefs {
 
     ExpenseReportsToApprovePage expenseReportsToApprovePage = new ExpenseReportsToApprovePage();
 
-    @When("user clicks on an Expense Report")
-    public void user_clicks_on_an_expense_report() {
+    @When("user edits an Expense Report")
+    public void user_edits_an_expense_report() {
         expenseReportsToApprovePage.tdFirstExpenseReport.click();
+        expenseReportsToApprovePage.clickButton("Edit");
     }
 
-    @When("user clicks Add an item button in Expense Lines")
-    public void user_clicks_add_an_item_button_in_expense_lines() {
+    @When("user adds items to Expense Lines")
+    public void user_adds_items_to_expense_lines() {
         expenseReportsToApprovePage.btnAddAnItem.click();
-    }
-
-    @When("user checks select all checkbox in Add: Expense Lines")
-    public void user_checks_select_all_checkbox_in_add_expense_lines() {
         expenseReportsToApprovePage.checkboxSelectAllExpenseLines.click();
+        expenseReportsToApprovePage.clickButton("Select");
     }
 
     @Then("{string} error message is displayed")

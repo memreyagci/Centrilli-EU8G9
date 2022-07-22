@@ -6,7 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class EmployeesPage {
+public class EmployeesPage extends BasePage {
 
     public EmployeesPage() {
         PageFactory.initElements(Driver.getDriver(), this);
@@ -14,7 +14,7 @@ public class EmployeesPage {
 
 
     public WebElement getSearchedEmployee(String employeeName) {
-        return Driver.getDriver().findElement(By.xpath("//span[.='" + employeeName + "']"));
+        return Driver.getDriver().findElement(By.xpath("//span[.=\"" + employeeName + "\"]"));
     }
 
 
