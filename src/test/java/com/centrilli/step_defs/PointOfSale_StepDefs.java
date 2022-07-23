@@ -46,6 +46,7 @@ public class PointOfSale_StepDefs {
 
     @Then("user should be able to see options in kanban board")
     public void user_should_be_able_to_see_options_in_kanban_board() {
+        wait.until(ExpectedConditions.urlContains("kanban"));
         BrowserUtils.verifyURLContains("kanban");
     }
 
