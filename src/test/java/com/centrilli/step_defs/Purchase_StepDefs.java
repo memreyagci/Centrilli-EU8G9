@@ -15,7 +15,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class Purchase_StepDefs {
 
     PurchasePage purchasePage = new PurchasePage();
-    WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 15);
+    WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 17);
 
 
     @When("user enters Vendor name")
@@ -68,7 +68,7 @@ public class Purchase_StepDefs {
 
     @When("user deletes Vendor Bill")
     public void user_deletes_vendor_bill() {
-        BrowserUtils.sleep(3);
+        BrowserUtils.sleep(16);
         purchasePage.actionsDropdown.click();
         wait.until(ExpectedConditions.visibilityOf(purchasePage.deleteButton));
         purchasePage.deleteButton.click();
