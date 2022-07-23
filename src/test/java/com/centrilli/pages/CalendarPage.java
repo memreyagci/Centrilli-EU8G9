@@ -1,5 +1,6 @@
 package com.centrilli.pages;
 
+import com.centrilli.utilities.BrowserUtils;
 import com.centrilli.utilities.Driver;
 import org.junit.Assert;
 import org.openqa.selenium.By;
@@ -89,7 +90,7 @@ public class CalendarPage extends BasePage {
 
     public void selectTimeSlot(String expectedDate) {
 
-        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 10);
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 15);
 
         String beforeXpath = "//div[@class='fc-day-grid fc-unselectable']/div[";
         String afterXpath = "]/div[@class='fc-bg']/table/tbody/tr/td[";
