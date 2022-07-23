@@ -68,7 +68,7 @@ public class Purchase_StepDefs {
 
     @When("user deletes Vendor Bill")
     public void user_deletes_vendor_bill() {
-        BrowserUtils.sleep(17);
+        BrowserUtils.sleep(16);
         purchasePage.actionsDropdown.click();
         wait.until(ExpectedConditions.visibilityOf(purchasePage.deleteButton));
         purchasePage.deleteButton.click();
