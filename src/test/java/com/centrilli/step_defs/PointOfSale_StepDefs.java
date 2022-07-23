@@ -12,13 +12,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class PointOfSale_StepDefs {
 
     PointOfSalePage pointOfSalePage = new PointOfSalePage();
-    WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 10);
-
-    @When("user clicks Create button in Point of Sale")
-    public void user_clicks_create_button_in_point_of_sale() {
-       wait.until(ExpectedConditions.visibilityOf(pointOfSalePage.createButton));
-       pointOfSalePage.createButton.click();
-    }
+    WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 15);
 
     @When("user enters {string} in name input field")
     public void user_enters_in_name_input_field(String pointOfSale) {
@@ -30,7 +24,6 @@ public class PointOfSale_StepDefs {
         pointOfSalePage.operationTypeBox.click();
         pointOfSalePage.searchMore.click();
         pointOfSalePage.selectOperationType(operationType);
-        pointOfSalePage.saveButton.click();
     }
 
     @Then("user should be able to see expected {string} title")
@@ -73,28 +66,16 @@ public class PointOfSale_StepDefs {
         BrowserUtils.verifyURLContains("list");
     }
 
-    @When("user selects {string} from list")
-    public void user_selects_from_list(String pointOfSale) {
+    @When("user selects point of sale")
+    public void user_selects_point_of_sale() {
         wait.until(ExpectedConditions.urlContains("list"));
-        pointOfSalePage.selectPointOfSale(pointOfSale);
-    }
-
-    @When("user clicks Edit button in Point of Sale")
-    public void user_clicks_edit_button_in_point_of_sale() {
-        wait.until(ExpectedConditions.elementToBeClickable(pointOfSalePage.editButton));
-        pointOfSalePage.editButton.click();
+        pointOfSalePage.pointOfSale.click();
     }
 
     @When("user enters new name {string} in name input field")
     public void user_enters_new_name_in_name_input_field(String newName) {
         pointOfSalePage.inputBox.clear();
         pointOfSalePage.inputBox.sendKeys(newName);
-    }
-
-    @When("user clicks Save button in Point of Sale")
-    public void user_clicks_save_button_in_point_of_sale() {
-        wait.until(ExpectedConditions.elementToBeClickable(pointOfSalePage.saveButton));
-        pointOfSalePage.saveButton.click();
     }
 
     @Then("user should be able to see expected {string} title and expected {string} operation type")
