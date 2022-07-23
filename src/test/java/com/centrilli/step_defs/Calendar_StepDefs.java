@@ -56,6 +56,7 @@ public class Calendar_StepDefs {
 
     @When("user clicks month button")
     public void user_clicks_month_button() {
+        wait.until(ExpectedConditions.visibilityOf(calendarPage.monthButton));
         calendarPage.monthButton.click();
     }
 
