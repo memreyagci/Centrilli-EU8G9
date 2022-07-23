@@ -81,6 +81,7 @@ public class PointOfSale_StepDefs {
 
     @When("user clicks Edit button in Point of Sale")
     public void user_clicks_edit_button_in_point_of_sale() {
+        wait.until(ExpectedConditions.elementToBeClickable(pointOfSalePage.editButton));
         pointOfSalePage.editButton.click();
     }
 
@@ -92,7 +93,7 @@ public class PointOfSale_StepDefs {
 
     @When("user clicks Save button in Point of Sale")
     public void user_clicks_save_button_in_point_of_sale() {
-        wait.until(ExpectedConditions.visibilityOf(pointOfSalePage.saveButton));
+        wait.until(ExpectedConditions.elementToBeClickable(pointOfSalePage.saveButton));
         pointOfSalePage.saveButton.click();
     }
 
