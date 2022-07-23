@@ -26,7 +26,7 @@ public class ExpenseReportsPage extends BasePage {
     public WebElement dropdownItemFirstEmployee;
 
     @FindBy(xpath = "//div[@class='o_notification_title']")
-    private WebElement divErrMsgTitle;
+    public WebElement divErrMsgTitle;
 
     @FindBy(xpath = "//div[@class='o_notification_content']/ul/li[1]")
     private WebElement liItemInvalidField;

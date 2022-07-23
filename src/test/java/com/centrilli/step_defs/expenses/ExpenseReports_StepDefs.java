@@ -1,9 +1,13 @@
 package com.centrilli.step_defs.expenses;
 
 import com.centrilli.pages.expenses.ExpenseReportsPage;
+import com.centrilli.utilities.Driver;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class ExpenseReports_StepDefs {
     ExpenseReportsPage expenseReportsPage = new ExpenseReportsPage();
@@ -40,6 +44,9 @@ public class ExpenseReports_StepDefs {
     @Then("{string} {string} error message is displayed")
     public void error_message_is_displayed(String expectedErrMsgTitle, String expectedErrMsgContent) {
         String expectedErrMsg = expectedErrMsgTitle + " " + expectedErrMsgContent;
+
+        new WebDriverWait(Driver.getDriver(), 30)
+                .until(ExpectedConditions.visibilityOf(expenseReportsPage.divErrMsgTitle));
         Assert.assertEquals(expectedErrMsg, expenseReportsPage.getErrMsg());
     }
 
