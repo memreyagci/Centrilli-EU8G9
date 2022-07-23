@@ -69,6 +69,7 @@ public class Calendar_StepDefs {
 
     @When("user clicks any time box")
     public void user_clicks_any_time_box() {
+        wait.until(ExpectedConditions.visibilityOf(calendarPage.monthButton));
         calendarPage.monthButton.click();
         calendarPage.selectTimeSlot(expectedDate);
     }
@@ -93,7 +94,7 @@ public class Calendar_StepDefs {
         wait.until(ExpectedConditions.visibilityOf(calendarPage.monthButton));
         calendarPage.monthButton.click();
         calendarPage.selectCreatedEvent(expectedEvent);
-        Driver.getDriver().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        Driver.getDriver().manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
     }
 
     @When("user clicks edit button")
