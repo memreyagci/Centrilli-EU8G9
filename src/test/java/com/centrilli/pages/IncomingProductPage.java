@@ -17,13 +17,13 @@ public class IncomingProductPage extends BasePage{
     @FindBy(xpath = "//a[.='Partner Locations/Customers']")
     public WebElement partnerLocationsCustomers;
 
-    @FindBy(xpath = "/html/body/div[1]/div[2]/div[2]/div/div/div/div/div[2]/div[2]/div/table[1]/tbody/tr[3]/td[2]/div/div") //div[@class='o_input_dropdown']/input[@id='o_field_input_715']
+    @FindBy(xpath = "(//input[@class='o_input ui-autocomplete-input'])[2]") //div[@class='o_input_dropdown']/input[@id='o_field_input_715']
     public WebElement dropDownDestinationLocation;
     //*[@id="ui-id-58"]/a
     @FindBy(xpath = "//ul[2]//a[.='Partner Locations/Customers/European Customers']") //li[@id='ui-id-26']
     public WebElement partnerLocationsCustomersEuropeanCustomers;
 
-    @FindBy(xpath = "//table[2]//div[@name='product_id']//input")
+    @FindBy(xpath = "(//input[@class='o_input ui-autocomplete-input'])[3]")
     public WebElement dropDownProduct;
 
     @FindBy(xpath = "//li/a[.='[2875] test']")
