@@ -15,7 +15,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class Purchase_StepDefs {
 
     PurchasePage purchasePage = new PurchasePage();
-    WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 15);
+    WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 17);
 
 
     @When("user enters Vendor name")
