@@ -12,10 +12,10 @@ Feature: Point of Sale functionality
 
   @CNTR-384
   Scenario: Verify that the user can create new Point Of Sale
-    When user clicks Create button in Point of Sale
+    When user clicks "Create" button
     And user enters "Fast Spring" in name input field
     And user selects "Return Operations" under inventory
-    And user clicks Save button in Point of Sale
+    And user clicks "Save" button
     Then user should be able to see expected "Fast Spring" title
 
   @CNTR-385
@@ -27,32 +27,32 @@ Feature: Point of Sale functionality
 
   @CNTR-386
   Scenario: Verify that the user can discard changes
-    When user clicks Create button in Point of Sale
+    When user clicks "Create" button
     And user enters "Fast Spring" in name input field
     And user clicks Discard button
     Then user should be able to return Point of Sale main page
 
   @CNTR-387
   Scenario: Verify that the user can edit Point Of Sale
-    When user selects "Fast Spring" from list
-    And user clicks Edit button in Point of Sale
+    When user selects point of sale
+    And user clicks "Edit" button
     And user enters new name "Revel" in name input field
     And user selects "7yy" under inventory
-    And user clicks Save button in Point of Sale
+    And user clicks Save button
     Then user should be able to see expected "Revel" title and expected "7yy" operation type
 
   @CNTR-388
   Scenario: Verify user cannot create new Point of Sale without Point of Sale name
-    When user clicks Create button in Point of Sale
+    When user clicks "Create" button
     And user enters "Fast Spring" in name input field
-    And user clicks Save button in Point of Sale
+    And user clicks "Save" button
     Then user should be able to see error message
 
   @CNTR-389
   Scenario: Verify user cannot create new Point of Sale without Operation type
-    When user clicks Create button in Point of Sale
+    When user clicks "Create" button
     And user selects "Return Operations" under inventory
-    And user clicks Save button in Point of Sale
+    And user clicks "Save" button
     Then user should be able to see error message
 
 
