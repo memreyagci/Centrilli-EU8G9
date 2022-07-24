@@ -13,15 +13,15 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class Calendar_StepDefs {
 
-    String day = "2022-07-05";
+    CalendarPage calendarPage = new CalendarPage();
+    LoginPage loginPage = new LoginPage();
+    BasePage basePage = new BasePage();
+    WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 10);
+
+    String day = calendarPage.getDate();
     String expectedEvent = "business lunch";
     String newEvent = "Meeting subject changed";
 
-    LoginPage loginPage = new LoginPage();
-    BasePage basePage = new BasePage();
-    CalendarPage calendarPage = new CalendarPage();
-
-    WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 10);
 
     @Given("user is already logged in")
     public void user_is_already_logged_in() {

@@ -10,6 +10,9 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 
 public class CalendarPage extends BasePage {
 
@@ -58,6 +61,9 @@ public class CalendarPage extends BasePage {
     @FindBy(xpath = "//button/span[.='Ok']")
     public WebElement confirmation;
 
+    @FindBy(xpath = "//td[4]//div[@class='o_field_name o_field_type_char']")
+    public WebElement existingEvent;
+
     public void verifyDayClicked(WebElement day) {
 
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 5);
@@ -92,9 +98,20 @@ public class CalendarPage extends BasePage {
     }
 
     public void selectDate(String day){
-        WebElement timeBox = Driver.getDriver().findElement(By.xpath("//table/tbody/tr/td[@data-date='"+day+"']"));
-        BrowserUtils.sleep(2);
-        timeBox.click();
+
+        try{
+            WebElement timeBox = Driver.getDriver().findElement(By.xpath("//tbody/tr/td[@data-date='" + day + "']"));
+            BrowserUtils.sleep(2);
+            timeBox.click();
+        }catch (Exception e){
+            existingEvent.click();
+            deleteButton.click();
+            confirmation.click();
+            WebElement timeBox = Driver.getDriver().findElement(By.xpath("//tbody/tr/td[@data-date='" + day + "']"));
+            BrowserUtils.sleep(2);
+            timeBox.click();
+        }
+
     }
 
     public void verifyEventCreated(String day){
@@ -108,4 +125,13 @@ public class CalendarPage extends BasePage {
         wait.until(ExpectedConditions.elementToBeClickable(event));
         event.click();
     }
+
+    public String getDate(){
+
+        SimpleDateFormat formatter = new SimpleDateFormat("YYYY-MM");
+        Date date = new Date();
+
+        return formatter.format(date)+"-05";
+    }
+
 }
