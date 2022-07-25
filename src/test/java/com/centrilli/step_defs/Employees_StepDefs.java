@@ -69,13 +69,14 @@ public class Employees_StepDefs {
 
     @Then("'Employee created' message appears under full profile")
     public void employee_created_message_appears_under_full_profile() {
+
         Assert.assertTrue(employeesPage.textEmployeeCreated.isDisplayed());
     }
 
     @Then("employee is listed in the search result")
     public void employee_is_listed() {
         employeesPage.getSearchedEmployee("");
-        Assert.assertTrue(employeesPage.getSearchedEmployee(employeeName).isDisplayed());
+        Assert.assertTrue(employeesPage.isSearchedEmployeeFound(employeeName));
     }
 
     @Then("Name field is highlighted")

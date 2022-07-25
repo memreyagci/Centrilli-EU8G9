@@ -1,10 +1,14 @@
 package com.centrilli.pages;
 
 import com.centrilli.utilities.Driver;
+import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class EmployeesPage extends BasePage {
 
@@ -15,6 +19,18 @@ public class EmployeesPage extends BasePage {
 
     public WebElement getSearchedEmployee(String employeeName) {
         return Driver.getDriver().findElement(By.xpath("//span[.=\"" + employeeName + "\"]"));
+    }
+
+    public boolean isSearchedEmployeeFound(String employeeName) {
+        WebElement searchedEmployee = getSearchedEmployee(employeeName);
+
+        try {
+            wait.until(ExpectedConditions.visibilityOf(searchedEmployee));
+        } catch (TimeoutException t) {
+            return false;
+        }
+
+        return true;
     }
 
 
