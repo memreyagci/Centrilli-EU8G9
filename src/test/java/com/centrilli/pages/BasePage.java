@@ -12,7 +12,7 @@ import java.util.ArrayList;
 
 public class BasePage {
 
-    WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 20);
+    WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 40);
 
     public BasePage() {
         PageFactory.initElements(Driver.getDriver(), this);
@@ -23,12 +23,13 @@ public class BasePage {
         String urlBeforeClick = Driver.getDriver().getCurrentUrl();
 
         // If navBarBtn is not displayed, it's in More menu because of reasons related to screen size, then it needs to be clicked first.
-        if (navBarBtn.isDisplayed()) {
-            navBarBtn.click();
-        } else {
+        if (!navBarBtn.isDisplayed()) {
+            wait.until(ExpectedConditions.elementToBeClickable(this.dropdownMenuMore));
             this.dropdownMenuMore.click();
-            navBarBtn.click();
         }
+
+        wait.until(ExpectedConditions.elementToBeClickable(navBarBtn));
+        navBarBtn.click();
 
         wait.until(ExpectedConditions.not(ExpectedConditions.urlToBe(urlBeforeClick)));
     }
@@ -36,6 +37,8 @@ public class BasePage {
     public void clickSubMenuBtn(String subMenuName) {
         String urlBeforeClick = Driver.getDriver().getCurrentUrl();
         WebElement subMenuBtn = Driver.getDriver().findElement(By.xpath("//div[@class='o_sub_menu_content']//span[normalize-space()='" + subMenuName + "']/.."));
+
+        wait.until(ExpectedConditions.elementToBeClickable(subMenuBtn));
         subMenuBtn.click();
 
         wait.until(ExpectedConditions.not(ExpectedConditions.urlToBe(urlBeforeClick)));
